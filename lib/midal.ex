@@ -8,11 +8,11 @@ defmodule Midal do
 
   ## Examples
 
-      iex> Midal.parse("<div itemscope><div itemprop="name">Midal</div></div>")
-      %{"name" => "Midal"}
+      iex> Midal.parse("<div itemscope><div itemprop='name'>Midal</div></div>")
+      [%{"name" => "Midal"}]
 
   """
-  def parse!(html) when is_bitstring(html) do
-    :world
+  def parse(html) when is_bitstring(html) do
+    Midal.HTML.parse(html)
   end
 end

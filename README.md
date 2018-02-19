@@ -15,7 +15,7 @@ A microdata parser for Elixir.
 ## TODOs
 
 - [ ] implement initial basic parser
-- [ ] improve floki implementation (does 2x necessary work)
+- [ ] improve Floki-based implementation (does at least 2x necessary work)
 - [ ] write conversion utilities for JSON-LD, RDFa
 - [ ] Research adding features for vocabularies (validation, not sure what else is useful)
 
