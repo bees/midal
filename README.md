@@ -1,23 +1,37 @@
 # Midal
 
-A microdata parser for Elixir.
-
+A microdata parser for Elixir. Name shamelessly stolen from
+[Mida](https://github.com/lawrencewoodman/mida). Lots of changes are incoming
+so consider the parse interface unstable.
 
 ## Example usage
 
 ```elixir
 
-  iex> Midal.parse("<div itemscope><div itemprop="name">Midal</div></div>")
+  iex> Midal.parse("<div itemscope><div itemprop='name'>Midal</div></div>")
   {:ok, %{"name" => "Midal"}}
 
 ```
 
+## Deviations from W3C spec
+
+Any deviation from [the current specification](https://www.w3.org/TR/microdata/) is considered a bug. Here are the currently known limitations:
+
+ * Unsupported attributes:
+   - `itemref`
+   - `itemtype`
+
+
 ## TODOs
 
-- [ ] implement initial basic parser
-- [ ] improve Floki-based implementation (does at least 2x necessary work)
+- [x] implement initial basic parser
+- [ ] fix deviations from w3c spec
+- [ ] improve Floki-based implementation (horrific performance, requeries the document way too much)
 - [ ] write conversion utilities for JSON-LD, RDFa
-- [ ] Research adding features for vocabularies (validation, not sure what else is useful)
+- [ ] research adding features for vocabularies (validation, not sure what else is useful)
+- [ ] setup CI
+- [ ] general repo maintenance (contributors, issue templates, etc)
+- [ ] publish on hex when stable
 
 ## Installation
 
