@@ -25,10 +25,23 @@ defmodule Midal do
   def parse!(html) when is_bitstring(html), do: parse_root_scopes(html)
 
   defp parse_root_scopes(html) do
-    html
-    |> level_scopes
-    |> Enum.map(&level_props/1)
-    |> Enum.map(&parse_props/1)
+    scopes = level_scopes(html)
+    scopes_meta_maps = Enum.map(scopes, &parse_scope_meta/1)
+
+    scopes_props =
+      scopes
+      |> Enum.map(&level_props/1)
+      |> Enum.map(&parse_props/1)
+
+    Enum.zip(scopes_meta_maps, scopes_props)
+    |> Enum.map(fn {scope_meta_map, scope_props} -> Map.merge(scope_meta_map, scope_props) end)
+  end
+
+  defp parse_scope_meta(html) do
+    case attribute(html, "itemtype") do
+      [nil] -> %{}
+      [value] -> %{"itemtype" => value}
+    end
   end
 
   defp parse_props(prop_list) do

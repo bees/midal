@@ -14,8 +14,10 @@ defmodule Midal.HTML.Meeseeks do
   def tag(html), do: Result.tag(html)
 
   def attribute(html, attr) do
-    Result.attr(html, attr)
-    |> String.split(" ")
+    case Result.attr(html, attr) do
+      nil -> [nil]
+      attr_string -> String.split(attr_string, " ")
+    end
   end
 
   def attributes(html) do

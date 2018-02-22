@@ -18,7 +18,6 @@ Any deviation from [the current specification](https://www.w3.org/TR/microdata/)
 
  * Unsupported attributes:
    - `itemref`
-   - `itemtype`
 
 
 ## TODOs

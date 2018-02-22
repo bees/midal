@@ -46,6 +46,7 @@ defmodule MidalTest do
       # it was verified by hand but still
       assert Midal.parse!(html) == [
                %{
+                 "itemtype" => "http://schema.org/Recipe",
                  "author" => "John Smith",
                  "cookTime" => "PT1H",
                  "datePublished" => "2009-05-08",
@@ -54,10 +55,12 @@ defmodule MidalTest do
                  "image" => "bananabread.jpg",
                  "interactionStatistic" => %{
                    "interactionType" => "http://schema.org/CommentAction",
-                   "userInteractionCount" => "140"
+                   "userInteractionCount" => "140",
+                   "itemtype" => "http://schema.org/InteractionCounter"
                  },
                  "name" => "Mom's World Famous Banana Bread",
                  "nutrition" => %{
+                   "itemtype" => "http://schema.org/NutritionInformation",
                    "calories" => "240 calories",
                    "fatContent" => "9 grams fat"
                  },
