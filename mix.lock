@@ -1,5 +1,8 @@
 %{
   "floki": {:hex, :floki, "0.20.0", "fd018e3e1c7a77cafbe4d51c9811102f701bbbbbd4c818e974ea371348bd0719", [:mix], [{:html_entities, "~> 0.4.0", [hex: :html_entities, repo: "hexpm", optional: false]}, {:mochiweb, "~> 2.15", [hex: :mochiweb, repo: "hexpm", optional: false]}], "hexpm"},
   "html_entities": {:hex, :html_entities, "0.4.0", "f2fee876858cf6aaa9db608820a3209e45a087c5177332799592142b50e89a6b", [:mix], [], "hexpm"},
+  "meeseeks": {:hex, :meeseeks, "0.7.7", "ade528b30b3db7bbfa9bb4452f2a2f93b0875ad0b5683a73706c598eb8d2aa35", [:mix], [{:meeseeks_html5ever, "~> 0.8.1", [hex: :meeseeks_html5ever, repo: "hexpm", optional: false]}], "hexpm"},
+  "meeseeks_html5ever": {:hex, :meeseeks_html5ever, "0.8.1", "8b10ad450d31b99408e570fab5f8e26aad9fa1cd2d6da0b99b5aa0a216809896", [:mix], [{:rustler, "~> 0.16", [hex: :rustler, repo: "hexpm", optional: false]}], "hexpm"},
   "mochiweb": {:hex, :mochiweb, "2.15.0", "e1daac474df07651e5d17cc1e642c4069c7850dc4508d3db7263a0651330aacc", [:rebar3], [], "hexpm"},
+  "rustler": {:hex, :rustler, "0.16.0", "9b04237d2e7b30fcae40a28edb56f59aad8f4e3c8790f4996b5f200f649964be", [:mix], [], "hexpm"},
 }

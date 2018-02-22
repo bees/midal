@@ -21,7 +21,8 @@ defmodule Midal.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:floki, "~> 0.20"}
+      {:floki, "~> 0.20"},
+      {:meeseeks, "~> 0.7.7"}
     ]
   end
 end
