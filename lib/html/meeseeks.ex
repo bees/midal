@@ -18,7 +18,12 @@ defmodule Midal.HTML.Meeseeks do
     |> String.split(" ")
   end
 
-  def attributes(html), do: Result.attrs(html)
+  def attributes(html) do
+    Result.attrs(html)
+    |> Enum.map(fn {key, values} ->
+      {key, if(values =~ " ", do: String.split(values, " "), else: values)}
+    end)
+  end
 
   def text(html), do: Result.text(html)
 
