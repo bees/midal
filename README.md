@@ -26,8 +26,8 @@ Any deviation from [the current specification](https://www.w3.org/TR/microdata/)
 - [x] implement initial basic parser
 - [ ] fix deviations from w3c spec
 - [ ] add basic handling for malformed/abusively crafted inputs (likely just limits on item nesting)
-- [ ] improve Floki-based implementation (horrific performance, requeries the document way too much)
-- [ ] refactor Floki-implementation to provide a document querying interface, move its current logic either to `lib/midal.ex` or a new file
+- [x] improve Floki-based implementation (horrific performance, requeries the document way too much)
+- [x] refactor Floki-implementation to provide a document querying interface, move its current logic either to `lib/midal.ex` or a new file
 - [ ] write conversion utilities for JSON-LD, RDFa
 - [ ] research adding features for vocabularies (validation, not sure what else is useful)
 - [ ] setup CI
