@@ -65,7 +65,7 @@ defmodule Midal do
   defp _get_prop_value(%{"value" => value}, "data", _html), do: value
   defp _get_prop_value(%{"value" => value}, "meter", _html), do: value
   defp _get_prop_value(%{"datetime" => value}, "time", _html), do: value
-  defp _get_prop_value(%{"href" => value}, _tag, _html), do: value
-  defp _get_prop_value(%{"src" => value}, _tag, _html), do: value
+  defp _get_prop_value(%{"href" => value}, tag, _html) when tag in ["a", "area", "link"], do: value
+  defp _get_prop_value(%{"src" => value}, tag, _html) when tag in ["audio", "embed", "iframe", "img", "source", "track", "video"], do: value
   defp _get_prop_value(_attr_map, _tag, html), do: String.trim(text(html))
 end
