@@ -13,7 +13,7 @@ defmodule MidalTest do
     </html>
     """
 
-    assert Midal.parse(html) == [%{"name" => "Midal"}]
+    assert Midal.parse!(html) == [%{"name" => "Midal"}]
   end
 
   test "parses multiple scopes in single document" do
@@ -32,7 +32,7 @@ defmodule MidalTest do
     </html>
     """
 
-    assert Midal.parse(html) == [
+    assert Midal.parse!(html) == [
              %{"name" => "Midal", "language" => "Elixir"},
              %{"language" => "Ruby", "name" => "Mida"}
            ]
@@ -44,7 +44,7 @@ defmodule MidalTest do
          :ok = File.close(file) do
       # TODO: replace with a more meaningful test - its just copying output...
       # it was verified by hand but still
-      assert Midal.parse(html) == [
+      assert Midal.parse!(html) == [
                %{
                  "author" => "John Smith",
                  "cookTime" => "PT1H",

@@ -6,17 +6,23 @@ defmodule Midal do
   """
 
   @doc """
-  Hello world.
+  parse will attempt to extract microdata out of html represented as a string.
 
   ## Examples
 
       iex> Midal.parse("<div itemscope><div itemprop='name'>Midal</div></div>")
-      [%{"name" => "Midal"}]
+      {:ok, [%{"name" => "Midal"}]}
 
   """
   def parse(html) when is_bitstring(html) do
-    parse_root_scopes(html)
+    try do
+      {:ok, parse_root_scopes(html)}
+    rescue
+      e in RuntimeError -> {:error, e}
+    end
   end
+
+  def parse!(html) when is_bitstring(html), do: parse_root_scopes(html)
 
   defp parse_root_scopes(html) do
     html
