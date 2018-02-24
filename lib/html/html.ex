@@ -1,5 +1,6 @@
 defmodule Midal.HTML do
-  @html_parser Application.get_env(:midal, :html_parser)
+  @default_parser Midal.HTML.Meeseeks
+  @html_parser Application.get_env(:midal, :html_parser, @default_parser)
 
   @callback level_scopes(html :: String.t()) :: String.t()
 
