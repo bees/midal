@@ -38,10 +38,9 @@ defmodule Midal do
   end
 
   defp parse_scope_meta(html) do
-    case HTML.attribute(html, "itemtype") do
-      [nil] -> %{}
-      [value] -> %{"itemtype" => value}
-    end
+    HTML.attributes(html)
+    |> Enum.filter(fn {key, _values} -> key in ["itemtype", "itemid"] end)
+    |> Enum.into(%{})
   end
 
   defp parse_props(prop_list) do
