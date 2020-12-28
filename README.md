@@ -1,3 +1,7 @@
+Check out https://github.com/chefconnie/microdata for a mature implementation, this code is essentially abandoned 
+
+---
+
 # Midal
 
 A microdata parser for Elixir. Name shamelessly stolen from
